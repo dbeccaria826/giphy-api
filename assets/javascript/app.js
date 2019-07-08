@@ -7,23 +7,30 @@ $(document).ready(function () {
 //still-animate
 //click function grabs data state if state is still switches to animate value
 
+let topics = ['Nicolas Cage', 'Comedians', 'Werner Herzog', 'Stanley Kubrick' ]
+
+function getBtn() {
+    for(let i = 0; i < topics.length; i++) {
+        let newBtn = topics[i];
+        $('#buttons').append('<button id=newbtn '+ i + ' >' + newBtn + '</button>' )
+    }
+}
+
+getBtn()
 
 
-let queryURL = "http://api.giphy.com/v1/gifs/search?q=nicolas+cage&limit=10&api_key=zTLXTIZUb2r2dOKO3slPidvtQ1hExHuU"
+let queryURL = "http://api.giphy.com/v1/gifs/search?q=nicolas+cage&limit=10&api_key=zTLXTIZUb2r2dOKO3slPidvtQ1hExHuU";
 
 $.ajax({
-    url:queryURL,
+    url:queryURL, 
     method: "GET"
 }).then(function(response){
     console.log(response)
     console.log(response.data[0].images.original)
     //response.data[0].images.original_still.url
-    $('#image').append('<img src=' + response.data[0].images.original_still.url + '/>')
-    $('#image').on('click', function() {
-        $('#image').empty()
-        $('#image').append('<img src=' + response.data[0].images.original.url + '/>')
+    
         
-    })
+    
 })
 
 
