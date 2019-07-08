@@ -11,8 +11,10 @@ let topics = ['Nicolas Cage', 'Comedians', 'Werner Herzog', 'Stanley Kubrick' ]
 
 function getBtn() {
     for(let i = 0; i < topics.length; i++) {
+        console.log('loop works')
         let newBtn = topics[i];
-        $('#buttons').append('<button id=newbtn '+ i + ' >' + newBtn + '</button>' )
+        $('#buttons').append('<button id=newbtn' + i + '>' + newBtn + '</button>' )
+        $('#newbtn'+ i).attr('data-value', topics[i])
     }
 }
 
