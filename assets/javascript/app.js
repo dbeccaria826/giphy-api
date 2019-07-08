@@ -19,14 +19,18 @@ function getBtn() {
             let stuff = $(this).attr('data-value')
             console.log(stuff)
             console.log(this)
-            let queryURL = "http://api.giphy.com/v1/gifs/search?q" + stuff + "&api_key=zTLXTIZUb2r2dOKO3slPidvtQ1hExHuU";
+            let queryURL = "http://api.giphy.com/v1/gifs/search?q=" + stuff + "&limit=10&api_key=zTLXTIZUb2r2dOKO3slPidvtQ1hExHuU";
         $.ajax({
-            url:queryURL, 
+            url: queryURL, 
             method: "GET"
             }).then(function(response){
             console.log(response)
+            let gifs = response.data;
+            console.log(gifs)
+            for(let i = 0; i < gifs.length; i++) {
+                console.log('loop works')
+            }
             
-            //response.data[0].images.original_still.url
         })
         })
     }
