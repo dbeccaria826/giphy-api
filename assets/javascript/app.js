@@ -20,7 +20,7 @@ function getBtn() {
             let stuff = $(this).attr("data-name")
             console.log(stuff)
             console.log(this)
-            let queryURL = "http://api.giphy.com/v1/gifs/search?q=" + stuff + "&limit=10&api_key=zTLXTIZUb2r2dOKO3slPidvtQ1hExHuU";
+            let queryURL = "https://api.giphy.com/v1/gifs/search?q=" + stuff + "&limit=10&api_key=zTLXTIZUb2r2dOKO3slPidvtQ1hExHuU";
         $.ajax({
             url: queryURL, 
             method: "GET"
