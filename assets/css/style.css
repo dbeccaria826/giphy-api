@@ -1,13 +1,24 @@
-
 body {
     width: 960px;
     margin: 0 auto;
+}
+
+#buttons {
+    text-align: center;
 }
 
 button {
     margin: 10px;
 }
 
+#img-container {
+    display: flex;
+    width: 1200px;
+    margin: 0 auto;
+}
 
-
-
+img {
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+}

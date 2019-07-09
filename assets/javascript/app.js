@@ -40,6 +40,9 @@ function getBtn() {
 
             
                 $("#newimg" + i).on("click", function() {
+
+
+                   
                     let value = $(this).attr("data-value")
                     console.log(value)
                     if(value === "still") {
@@ -61,7 +64,9 @@ function getBtn() {
         })
     }
 }
-
+$('#clear').on('click', function() {
+    $('#images').empty()
+})
 getBtn()
 
 
