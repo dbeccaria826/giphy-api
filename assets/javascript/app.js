@@ -11,12 +11,12 @@ let topics = ["nicolas cage", "sean connery", "werner herzog", "stanley kubrick"
 
 function getBtn() {
     for(let i = 0; i < topics.length; i++) {
-        console.log('loop works')
+        console.log("loop works")
         let newBtn = topics[i];
-        $('#buttons').append('<button id=newbtn' + i + '>' + newBtn + '</button>' )
-        $('#newbtn'+ i).attr('data-value', topics[i])
-        $('#newbtn' + i).on('click', function(){
-            let stuff = $(this).attr('data-value')
+        $("#buttons").append("<button id=newbtn" + i + ">" + newBtn + "</button>" )
+        $("#newbtn"+ i).attr("data-value", topics[i])
+        $("#newbtn" + i).on("click", function(){
+            let stuff = $(this).attr("data-value")
             console.log(stuff)
             console.log(this)
             let queryURL = "http://api.giphy.com/v1/gifs/search?q=" + stuff + "&limit=10&api_key=zTLXTIZUb2r2dOKO3slPidvtQ1hExHuU";
@@ -28,9 +28,19 @@ function getBtn() {
             let gifData = response.data;
           console.log(gifData)
             for(let i = 0; i < gifData.length; i++) {
-                console.log('loop works')
-                $('#images').append('<img src=' + gifData[i].images.downsized_still.url + '>')
+                console.log("loop works") 
                 
+                $("#images").append("<img id=newimg" + i + " src=" + gifData[i].images.downsized_still.url + ">")
+                $("#newimg" + i).attr("data-value", "still")
+                $("#images").on("click", function() {
+                  
+                    if(imgState === "still") {
+                      
+                      
+                        
+                    }
+                    
+                })
                 
                 
             }
