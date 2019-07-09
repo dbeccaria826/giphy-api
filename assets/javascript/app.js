@@ -7,7 +7,7 @@ $(document).ready(function () {
 //still-animate
 //click function grabs data state if state is still switches to animate value
 
-let topics = ["nicolas cage", "sean connery", "werner herzog", "david lynch", "twin peaks" ]
+let topics = ["nicolas cage", "sean connery", "werner herzog", "david lynch", "twin peaks", "dune", "trading places", "redlettermedia" ]
 
 function getBtn() {
     for(let i = 0; i < topics.length; i++) {
@@ -16,6 +16,7 @@ function getBtn() {
         $("#buttons").append("<button id=newbtn" + i + ">" + newBtn + "</button>" )
         $("#newbtn"+ i).attr("data-name", topics[i])
         $("#newbtn" + i).on("click", function(){
+            $('#images').empty()
             let stuff = $(this).attr("data-name")
             console.log(stuff)
             console.log(this)
@@ -26,16 +27,20 @@ function getBtn() {
             }).then(function(response){
             console.log(response)
             let gifData = response.data;
-            
+           
           console.log(gifData)
             for(let i = 0; i < gifData.length; i++) {
                 console.log("loop works") 
+                console.log(gifData[i].rating)
+                if(gifData.rating !== "pg-13" && gifData.rating !== "r"){
                 
                 
                 $("#images").append("<img id=newimg" + i + " src="+ gifData[i].images.fixed_height_still.url + ">")
                 $("#newimg" + i).attr("data-value", "still")
                 $("#newimg" + i).attr("data-still", gifData[i].images.fixed_height_still.url)
                 $("#newimg" + i).attr("data-animate", gifData[i].images.fixed_height.url)
+                $('#newimg' + i).prepend("<div id=rating>")
+                $('#rating').append('<p>Rating: ' + gifData[i].rating + '</p>')
 
 
             
@@ -57,7 +62,7 @@ function getBtn() {
                    
                 })
                 
-            
+            }
             }
             
         })
