@@ -7,7 +7,7 @@ $(document).ready(function () {
 //still-animate
 //click function grabs data state if state is still switches to animate value
 
-let topics = ["nicolas cage", "comedians", "werner herzog", "stanley kubrick", "david lynch" ]
+let topics = ["nicolas cage", "sean connery", "werner herzog", "stanley kubrick", "david lynch" ]
 
 function getBtn() {
     for(let i = 0; i < topics.length; i++) {
@@ -25,10 +25,14 @@ function getBtn() {
             method: "GET"
             }).then(function(response){
             console.log(response)
-            let gifs = response.data;
-            console.log(gifs)
-            for(let i = 0; i < gifs.length; i++) {
+            let gifData = response.data;
+          console.log(gifData)
+            for(let i = 0; i < gifData.length; i++) {
                 console.log('loop works')
+                $('#images').append('<img src=' + gifData[i].images.downsized_still.url + '>')
+                
+                
+                
             }
             
         })
