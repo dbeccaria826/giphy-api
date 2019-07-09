@@ -32,8 +32,13 @@ function getBtn() {
                 console.log("loop works") 
                 
                 
-                $("#images").append("<img id=newimg" + i + " data-animate=gifData[i].images.fixed_height.url  data-still=gifData[i].images.fixed_height_still.url src=" + gifData[i].images.fixed_height_still.url + ">")
+                $("#images").append("<img id=newimg" + i + " src="+ gifData[i].images.fixed_height_still.url + ">")
                 $("#newimg" + i).attr("data-value", "still")
+                $("#newimg" + i).attr("data-still", gifData[i].images.fixed_height_still.url)
+                $("#newimg" + i).attr("data-animate", gifData[i].images.fixed_height.url)
+
+
+            
                 $("#newimg" + i).on("click", function() {
                     let value = $(this).attr("data-value")
                     console.log(value)
