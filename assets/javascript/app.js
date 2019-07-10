@@ -7,7 +7,7 @@ $(document).ready(function () {
 //still-animate
 //click function grabs data state if state is still switches to animate value
 
-let topics = ["nicolas cage","herzog", "david lynch", "mandy", "face/off", "redlettermedia", "mike stoklasa" ]
+let topics = ["nicolas cage","werner herzog", "david lynch", "mandy", "face/off", "redlettermedia", "mike stoklasa" ]
 //Adding styling using jquery instead of using css
 
 $('#header').append('<h1 id=title> Gif Generator </h1>').
@@ -18,24 +18,34 @@ css('display','block').
 css('margin', '0 auto')
 $('#title').append('<p>Click on the buttons below to generate the images, click \'em again to view the gif version</p>')
 
-function getBtn() {
+
+for(let i = 0; i < topics.length; i++) {
+    console.log("loop works")
+    let newBtn = topics[i];
+    $("#buttons").append("<button id=newbutton" + i + ">" + newBtn + "</button>" )
+    $("#newbutton" + i).attr("data-name", topics[i])
+    startApp(i)
+}
+
+
+
+
+
+
+function startApp(i) {
     
    
-    //------
-    for(let i = 0; i < topics.length; i++) {
-        console.log("loop works")
-        let newBtn = topics[i];
-        $("#buttons").append("<button id=newbtn" + i + ">" + newBtn + "</button>" )
-        $("#newbtn"+ i).attr("data-name", topics[i])
-       
-    
-        $("#newbtn" + i).on("click", function(){
+        $("#newbutton" + i).on("click", function(){
+
             $('#img-container').empty()
             let stuff = $(this).attr("data-name")
             console.log(stuff)
             console.log(this)
-            let queryURL = "https://api.giphy.com/v1/gifs/search?q=" + stuff + "&limit=10&api_key=zTLXTIZUb2r2dOKO3slPidvtQ1hExHuU";
-        //----
+            let queryURL = "https://api.giphy.com/v1/gifs/search?q=" + stuff + "&limit=10&rating=pg&api_key=zTLXTIZUb2r2dOKO3slPidvtQ1hExHuU";
+   
+    
+    
+    
         
          
         
@@ -49,7 +59,7 @@ function getBtn() {
             let gifData = response.data;
            
           console.log(gifData)
-        //-------
+
           
             for(let i = 0; i < gifData.length; i++) {
                 console.log("loop works") 
@@ -65,7 +75,7 @@ function getBtn() {
                 $("#newimg" + i).attr("data-animate", gifData[i].images.fixed_height.url)
                 
 
-            //--------
+          
                 $("#newimg" + i).on("click", function() {
 
 
@@ -89,22 +99,23 @@ function getBtn() {
             
         })
     })
-    }
-    $("#usersubmit").on('click', function(e){
+    
+    
+}
+
+$("#usersubmit").on('submit', function(e){
         event.preventDefault()
         let userSearch = $('#usersearch').val()
         $('#usersearch').val('')
         topics.push(userSearch)
         console.log(topics)
+       
+        let newBtn = topics[i];
+        $("#buttons").append("<button id=newbutton" + topics.length + ">" + newBtn + "</button>" )
+        $("#newbutton" + i).attr("data-name", topics[i])
+   
+       
     })
-}
-$('#clear').on('click', function() {
-    $('#img-container').empty()
-})
-getBtn()
-
-
-
 
 
 
