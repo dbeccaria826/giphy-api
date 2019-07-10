@@ -7,7 +7,7 @@ $(document).ready(function () {
 //still-animate
 //click function grabs data state if state is still switches to animate value
 
-let topics = ["nicolas cage","werner herzog", "david lynch", "mandy", "face/off", "redlettermedia", "mike stoklasa" ]
+let topics = ["nicolas cage","werner herzog", "david lynch", "the wickerman", "face/off", "redlettermedia", "mike stoklasa" ]
 //Adding styling using jquery instead of using css
 
 $('#header').append('<h1 id=title> Gif Generator </h1>').
@@ -19,22 +19,28 @@ css('margin', '0 auto')
 $('#title').append('<p>Click on the buttons below to generate the images, click \'em again to view the gif version</p>')
 
 
+
+
+
+
+
+
+
+function startApp() {
+    
+
 for(let i = 0; i < topics.length; i++) {
     console.log("loop works")
     let newBtn = topics[i];
     $("#buttons").append("<button id=newbutton" + i + ">" + newBtn + "</button>" )
     $("#newbutton" + i).attr("data-name", topics[i])
-    startApp(i)
-}
-
-
-
-
-
-
-function startApp(i) {
-    
    
+
+
+
+
+
+
         $("#newbutton" + i).on("click", function(){
 
             $('#img-container').empty()
@@ -100,26 +106,21 @@ function startApp(i) {
         })
     })
     
-    
-}
-
-$("#usersubmit").on('submit', function(e){
+}    
+console.log(topics)
+$("#usersubmit").on('click', function(){
         event.preventDefault()
         let userSearch = $('#usersearch').val()
         $('#usersearch').val('')
         topics.push(userSearch)
         console.log(topics)
-       
-        let newBtn = topics[i];
-        $("#buttons").append("<button id=newbutton" + topics.length + ">" + newBtn + "</button>" )
-        $("#newbutton" + i).attr("data-name", topics[i])
-   
-       
-    })
+        console.log("submit works")
+})
+
+}
 
 
-
-
+ startApp()
 
 
 })
