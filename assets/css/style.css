@@ -1,20 +1,19 @@
-body {
-    width: 960px;
-    margin: 0 auto;
-}
 
+#formsubmit {
+    text-align: center;
+}
 #buttons {
     text-align: center;
+    margin: 0 auto;
 }
 
 button {
     margin: 10px;
 }
 
-#img-container {
-    display: flex;
-    width: 1200px;
-    margin: 0 auto;
+.imghold {
+    display:inline-grid;
+    position: relative;
 }
 
 img {
