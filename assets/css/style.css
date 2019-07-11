@@ -1,4 +1,14 @@
+body {
+    background-image: linear-gradient(rgb(13, 49, 90), rgb(35, 93, 180), rgb(50, 118, 245));
+    background-size: cover;
+    background-repeat: no-repeat;
+   
+    height: 3000px;
+}
 
+h1 {
+    text-align: center;
+}
 #formsubmit {
     text-align: center;
 }

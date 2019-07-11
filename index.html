@@ -1,31 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Gif Generator</title>
-    <script
-  src="https://code.jquery.com/jquery-3.4.1.js"
-  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-  crossorigin="anonymous"></script>
-    <script src="assets/javascript/app.js"></script>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Gif Generator</title>
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+  <script src="assets/javascript/app.js"></script>
 </head>
+
 <body>
-<div id="header"></div>
-    <div id="buttons">
-     
-      <form class="form-inline" id="formsubmit">
-        <input id="usersearch" class="form-control sm-5 ml-4" type="text">
-       <button class="bg-primary" id="usersubmit" type="submit">Submit</button>
-      </form>
-    </div>
-    <h2 id="img-title">Results</h2>
-    <div id="img-container" class="container">
-   
-  
-</div>
+
+  <div class="jumbotron w-50 mx-auto bg-dark text-light">
+    <h1>Gif Generator</h1>
+  </div>
+  <div id="buttons" class="container">
+
+    <form class="form-inline float-right" id="formsubmit">
+      <input id="usersearch" class="form-control sm-5" type="text">
+      <button class="btn btn-dark" id="usersubmit" type="submit">Submit</button>
+    </form>
+  </div>
+  <h2 id="img-title" class="border border-dark bg-dark text-light w-50 mx-auto">Results</h2>
+  <div id="img-container" class="container border border-dark bg-dark text-light">
+
+
+  </div>
+
 </body>
+
 </html>
