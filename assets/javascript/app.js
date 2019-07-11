@@ -7,7 +7,7 @@ $(document).ready(function () {
     //still-animate
     //click function grabs data state if state is still switches to animate value
 
-    let topics = ["nicolas cage", "werner herzog", "david lynch", "the wickerman", "half in the bag", "redlettermedia", "mike stoklasa"]
+    let topics = ["nicolas cage", "werner herzog", "david lynch", "the wickerman", "half in the bag", "redlettermedia", "mike stoklasa", "x-files","robocop","deadwood", "timothy olyphant"]
     //Adding styling using jquery instead of using css
 
     function startApp() {
